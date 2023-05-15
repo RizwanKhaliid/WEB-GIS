@@ -1,0 +1,72 @@
+:root {
+    --main-radius: 5px;
+    --main-padding: 5px;
+  }
+  
+  body {
+    background-image: url(/bg1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    font-family: "Inter", sans-serif;
+  }
+  
+  .container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr  1.2fr ;
+    grid-template-areas:
+      "nav nav nav nav"
+      "main main main main";
+    grid-gap: 0.2rem;
+    font-weight: 800;
+    font-size: 25px;
+    color: #004d40;
+    text-align: center;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-items: center;
+    grid-area: nav;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+  }
+  
+  .main {
+    grid-area: main;
+    grid-row-end: auto;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+  }
+   
+  .box{
+    text-align: left; 
+    word-wrap: break-word;
+
+  }
+  a {
+    color: #060606;
+    text-align: center;
+    display: block;
+    font-family: inherit;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 1rem;
+  }
+  a:hover{
+    color: rgb(87, 155, 214);
+
+  }
+  
+  @media only screen and (max-width: 550px) {
+    .container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.4fr  2.2fr ;
+      grid-template-areas:
+        "nav"
+        "main";
+        
+    }
+  }
